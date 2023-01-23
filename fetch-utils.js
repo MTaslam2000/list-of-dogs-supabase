@@ -9,11 +9,17 @@ export async function getDogs() {
     const { data, error } = await client
         .from('dogs')
         .select('*');
+        
     // and return the response;
-    console.log(data);
+    return data;
 }
 
 export async function getDog(id) {
     // from the dogs table, select a single dog who has the matching id
+    const { data, error } = await client
+        .from('dogs')
+        .select('*')
+        .match(id);
     // and return the response
+    return data;
 }
