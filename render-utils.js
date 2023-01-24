@@ -8,7 +8,7 @@ export function renderDogCard(dog) {
 
     p.textContent = dog.name;
     img.src = `./assets/${dog.breed}.jpeg`;
-    a.href = ''; // link to the dog's detail page here
+    a.href = `./detail/?id=${dog.id}`; // link to the dog's detail page here
 
     div.append(p, img);
 
@@ -27,6 +27,8 @@ export function renderDogDetail(dog) {
     const ageAndBreedEl = document.createElement('div');
 
     // examine the css classes already written and finish writing a render function for the detail page using the above elements
-
+    img.append(descriptionEl, nameEl, ageEl, breedEl, ageAndBreedEl);
+    div.append(img);
     return div;
 }
+
